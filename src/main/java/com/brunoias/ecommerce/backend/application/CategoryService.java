@@ -2,9 +2,8 @@ package com.brunoias.ecommerce.backend.application;
 
 import com.brunoias.ecommerce.backend.domain.model.Category;
 import com.brunoias.ecommerce.backend.domain.port.ICategoryRepository;
-import org.springframework.stereotype.Service;
 
-@Service
+
 public class CategoryService {
 
     private final ICategoryRepository categoryRepository;

@@ -11,11 +11,11 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User save (User user){
+    public User save(User user) {
         return this.userRepository.save(user);
     }
 
-    public User findById (Integer id){
+    public User findById(Integer id) {
         return this.userRepository.findById(id);
     }
 }
