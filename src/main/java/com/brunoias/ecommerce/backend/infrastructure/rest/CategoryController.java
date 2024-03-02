@@ -2,9 +2,12 @@ package com.brunoias.ecommerce.backend.infrastructure.rest;
 
 import com.brunoias.ecommerce.backend.application.CategoryService;
 import com.brunoias.ecommerce.backend.domain.model.Category;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("api/v1/admin/categories")
+@Slf4j
 public class CategoryController {
     private final CategoryService categoryService;
 
@@ -19,7 +22,17 @@ public class CategoryController {
     }
 
     @GetMapping
-    public Category category(@PathVariable Integer id) {
+    public Iterable<Category> findAll(){
+        return categoryService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Category findById(@PathVariable Integer id) {
         return categoryService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Integer id) {
+        categoryService.deleteByid(id);
     }
 }

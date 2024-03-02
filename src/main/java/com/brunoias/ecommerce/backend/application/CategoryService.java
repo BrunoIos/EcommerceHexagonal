@@ -12,15 +12,19 @@ public class CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    public Category save (Category category){
+    public Category save(Category category) {
         return this.categoryRepository.save(category);
     }
 
-    public Iterable<Category> findAll(){
+    public Iterable<Category> findAll() {
         return this.categoryRepository.findAll();
     }
 
-    public  Category findById(Integer id){
+    public Category findById(Integer id) {
         return this.categoryRepository.findById(id);
+    }
+
+    public void deleteByid(Integer id) {
+        categoryRepository.deleteById(id);
     }
 }
