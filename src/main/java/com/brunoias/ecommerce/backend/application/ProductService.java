@@ -12,7 +12,7 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    Product save(Product product) {
+    public Product save(Product product) {
         return this.productRepository.save(product);
     }
 
