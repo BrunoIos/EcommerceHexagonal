@@ -20,6 +20,6 @@ public interface CategoryMapper {
             }
     )
     Category toCategory(CategoryEntity categoryEntity);
-    Iterable<Category>toUsers(Iterable<CategoryEntity> categoryEntity);
+    Iterable<Category>toCategories(Iterable<CategoryEntity> categoryEntity);
     @InheritInverseConfiguration
-    CategoryEntity toUserEntity(Category category);}
+    CategoryEntity toCategoryEntity(Category category);}
