@@ -2,6 +2,8 @@ package com.brunoias.ecommerce.backend.infrastructure.rest;
 
 import com.brunoias.ecommerce.backend.application.ProductService;
 import com.brunoias.ecommerce.backend.domain.model.Product;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,18 +17,18 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product save(@RequestBody Product product) {
-        return productService.save(product);
+    public ResponseEntity<Product> save(@RequestBody Product product) {
+        return new ResponseEntity<>(productService.save(product), HttpStatus.CREATED);
     }
 
     @GetMapping("{id}")
-    public Product save(@PathVariable Integer id) {
-        return productService.findById(id);
+    public ResponseEntity<Product> save(@PathVariable Integer id) {
+        return ResponseEntity.ok(productService.findById(id));
     }
 
     @GetMapping()
-    public Iterable<Product> findAll() {
-        return productService.findAll();
+    public ResponseEntity<Iterable<Product>> findAll() {
+        return ResponseEntity.ok(productService.findAll());
     }
 
 
