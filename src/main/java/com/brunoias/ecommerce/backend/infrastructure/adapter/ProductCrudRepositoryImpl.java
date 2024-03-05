@@ -3,7 +3,9 @@ package com.brunoias.ecommerce.backend.infrastructure.adapter;
 import com.brunoias.ecommerce.backend.domain.model.Product;
 import com.brunoias.ecommerce.backend.domain.port.IProductRepository;
 import com.brunoias.ecommerce.backend.infrastructure.mapper.ProductMapper;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class ProductCrudRepositoryImpl implements IProductRepository {
     private final IProductCrudRepository iProductCrudRepository;
 

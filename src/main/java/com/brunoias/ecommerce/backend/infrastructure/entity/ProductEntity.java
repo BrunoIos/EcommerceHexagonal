@@ -28,4 +28,8 @@ public class ProductEntity {
     private LocalDateTime dateUpdated;
     private Integer userId;
     private Integer categoryId;
+    @ManyToOne
+    private UserEntity userEntity;
+    @ManyToOne
+    private CategoryEntity categoryEntity;
 }

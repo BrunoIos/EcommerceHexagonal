@@ -2,8 +2,9 @@ package com.brunoias.ecommerce.backend.application;
 
 import com.brunoias.ecommerce.backend.domain.model.Product;
 import com.brunoias.ecommerce.backend.domain.port.IProductRepository;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class ProductService {
 
     final IProductRepository productRepository;
