@@ -29,11 +29,13 @@ public class ProductCrudRepositoryImpl implements IProductRepository {
 
     @Override
     public Product findById(Integer id) {
-        return productMapper.toProduct(iProductCrudRepository.findById(id).get());
+        return productMapper.toProduct(iProductCrudRepository.findById(id).orElseThrow(() -> new RuntimeException("Product with id" + id + " do not exist")));
     }
 
     @Override
     public void deleteByID(Integer id) {
+        iProductCrudRepository.findById(id).orElseThrow(() -> new RuntimeException("Product with id" + id + " do not exist")
+        );
         iProductCrudRepository.deleteById(id);
     }
 }
