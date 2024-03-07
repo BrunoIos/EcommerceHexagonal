@@ -26,8 +26,7 @@ public class ProductEntity {
     private LocalDateTime dateCreated;
     @UpdateTimestamp
     private LocalDateTime dateUpdated;
-    private Integer userId;
-    private Integer categoryId;
+
     @ManyToOne
     private UserEntity userEntity;
     @ManyToOne

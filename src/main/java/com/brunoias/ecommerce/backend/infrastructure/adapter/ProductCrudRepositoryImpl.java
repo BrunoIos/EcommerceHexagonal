@@ -19,12 +19,12 @@ public class ProductCrudRepositoryImpl implements IProductRepository {
 
     @Override
     public Product save(Product product) {
-        return productMapper.toProduct(productMapper.toProductEntity(product));
+        return productMapper.toProduct(iProductCrudRepository.save(productMapper.toProductEntity((product))));
     }
 
     @Override
     public Iterable<Product> findAll() {
-        return productMapper.toProducts(iProductCrudRepository.findAll());
+        return productMapper.toProductList(iProductCrudRepository.findAll());
     }
 
     @Override
